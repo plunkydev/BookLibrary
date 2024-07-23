@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu&display=swap');
+
+:root {
+    --light-color: #F9FAF8;
+    --half-light-color: #e5e7eb;
+    --color-dark: #1F2937;
+    --button-color: #3882F6;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+p {
+    margin: 0;
+}
+
+/* form */
+.hide-form {
+    display: none;
+}
+.display-form {
+    display: grid; /* none or flow-root*/
+    background-color: #ebedf1df;
+    grid-template-columns: clamp(30vw, 300px, 90vw);
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px var(--half-light-color);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 8px;
+    .form-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        color: var(--color-dark);
+        input[type="submit"] {
+            color: var(--color-dark);
+            background-color: var(--light-color);
+            height: 30px;
+        }
+        input[type="submit"]:hover {
+            color: var(--light-color);
+            background-color: var(--button-color);
+            height: 30px;
+            transition: all 500ms;
+        }
+        input {
+            height: 20px;
+            border-radius: 50px;
+            border: 1px solid var(--half-light-color);
+            box-shadow: 0px 0px 10px var(--half-light-color);
+        }
+    }
+}
+form > div:nth-last-child(2) {
+    display: flex;
+    justify-content: space-between;
+}
+/* form end */
+/* nav seccion*/
+nav {
+    background-color: var(--color-dark);
+    display: grid;
+}
+.nav-container {
+    display: grid;
+    grid-template-columns: 1fr min(100ch, 100%) 1fr;
+    grid-template-rows: 50px 1fr 50px;
+}
+.nav-container > * {
+    grid-column: 2;
+}
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.nav-logo a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.boton-buscar-cerrar {
+    transform: rotate(45deg);
+}
+
+#boton-buscar {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(252, 252, 252);
+    color: var(--color-dark);
+    font-size: 34px;
+    font-weight: 800;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#boton-buscar:hover {
+    font-size: 36px;
+    width: 55px;
+    padding-bottom: 53px;
+    transition: 50ms;
+    box-shadow: 0px 0px 10px var(--half-light-color);
+}
+/* nav fin*/
+
+/* seccion informacion */
+.blur-section {
+    filter: blur(5px) grayscale(70%);
+}
+.seccion-informacion {
+    display: grid;
+    grid-template-columns: 1fr min(90ch, 100%) 1fr;
+}
+.seccion-informacion > * {
+    grid-column: 2;
+    margin: 10px 0 50px 0;
+}
+.informacion-container h2 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--color-dark);
+}
+.tags-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.tag-item {
+    flex-basis: 150px;
+    display: grid;
+    justify-items: center;
+}
+.tag-paragraph {
+    text-align: center;
+    color: var(--color-dark);
+}
+.tag-paragraph p {
+    margin: 8px 3px;
+}
+.tag-img {
+    width: 150px;
+    height: 250px;
+    border: 5px solid var(--button-color);
+    border-radius: 10px;
+}
+.tag-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.noleido {
+    width: 100%;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.borrar {
+    width: 100%;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.leido {
+    width: 100%;
+    background-color: #00ff80;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* fin seccion informacion */
+
+/* footer */
+footer {
+    background-color: var(--color-dark);
+    color: var(--half-light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* fin del footer */

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+
+<body>
+    <div class="hide-form" id="content-form">
+        <form id="miFormulario">
+            <div class="form-item">
+                <label for="title">Titulo</label>
+                <input type="text" name="title">
+            </div>        
+            <div class="form-item">
+                <label for="autor">Autor</label>
+                <input type="text" name="autor">
+            </div>    
+            <div class="form-item">
+                <label for="paginas">Paginas</label>
+                <input type="number" name="paginas">
+            </div>
+            <div class="form-item">
+                <label for="portada">Portada</label>
+                <input type="url" name="portada" placeholder="https://www.sitio.com/images/portada.png">
+            </div>
+            <div class="form-item">
+                <label for="leido">Leido? Si: </label>
+                <input id="esLeido" type="checkbox" onchange="obtenerValor()">
+            </div>
+            <div id="send-form" class="form-item">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-flex">
+                <div class="nav-item nav-logo">
+                    <a href="./index.html">Libreria</a>
+                </div>
+                <div class="nav-item nav-menu">
+                    <button id="boton-buscar">+</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="seccion-informacion">
+        <div id="content-area" class="informacion-container">
+            <h2>Tus libros</h2>
+            <div class="tags-container">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <p>Copyright © Plunkydev 2024</p>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
