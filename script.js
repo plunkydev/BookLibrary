@@ -15,7 +15,11 @@ function agregarTagItem(autor, titulo, paginas, leido, img) {
     nuevoTagImg.classList.add("tag-img");
     const imagen = document.createElement("img");
     imagen.id = "link-img";
-    imagen.src = img;
+    if (img) {
+        imagen.src = img;
+        } else {
+            imagen.src = '/imgenSindefinir.png';
+        }
     nuevoTagImg.appendChild(imagen);
 
     // Crear el div con la clase "tag-paragraph" y los elementos de texto
@@ -104,21 +108,25 @@ function cambiarLeidoData(libros, estelibro) {
 
 
 
-function Book(autor, nombre, numero_paginas, leido, url_portada) {
-    // the constructor...
-    this.autor = autor;
-    this.nombre = nombre;
-    this.numero_paginas = numero_paginas;
-    this.leido = leido;
-    this.url_portada = url_portada;
-};
-Book.prototype.isRead = function() {
-    if (this.leido) {
-        this.leido = false;
-    } else {
-        this.leido = true;
-    };
+
+class Book {
+    constructor(autor, nombre, numero_paginas, leido, url_portada) {
+        this.autor = autor;
+        this.nombre = nombre;
+        this.numero_paginas = numero_paginas;
+        this.leido = leido;
+        this.url_portada = url_portada;
+    }
+
+    isRead() {
+        if (this.leido) {
+            this.leido = false;
+        } else {
+            this.leido = true;
+        };
+    }
 }
+
 //cargar libreria al abrir la app
 window.addEventListener('load', (event) => {
         const libro1 = new Book('David Rosales', 'El Camino de Plunky para ser Programador', 233, true, 'https://i.postimg.cc/cHjhX3fY/yo.jpg');
@@ -153,6 +161,7 @@ function addBookToLibrary(event) {
     botonAgregar();
     event.preventDefault();
 }
+
 function eliminarContenidoDelDiv() {
     let divPadre = document.querySelector('.tags-container');
     divPadre.innerHTML = '';
