@@ -18,7 +18,7 @@ function agregarTagItem(autor, titulo, paginas, leido, img) {
     if (img) {
         imagen.src = img;
         } else {
-            imagen.src = '/imgenSindefinir.png';
+            imagen.src = './imgenSindefinir.png';
         }
     nuevoTagImg.appendChild(imagen);
 
