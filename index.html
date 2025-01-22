@@ -10,25 +10,25 @@
 
 <body>
     <div class="hide-form" id="content-form">
-        <form id="miFormulario">
+        <form id="miFormulario" action="#" method="post">
             <div class="form-item">
                 <label for="title">Titulo</label>
-                <input type="text" name="title">
+                <input id="title" type="text" name="title" required>
             </div>        
             <div class="form-item">
                 <label for="autor">Autor</label>
-                <input type="text" name="autor">
+                <input id="autor" type="text" name="autor" required>
             </div>    
             <div class="form-item">
                 <label for="paginas">Paginas</label>
-                <input type="number" name="paginas">
+                <input id="paginas" type="number" name="paginas" required>
             </div>
             <div class="form-item">
                 <label for="portada">Portada</label>
-                <input type="url" name="portada" placeholder="https://www.sitio.com/images/portada.png">
+                <input id="portada" type="url" name="portada" placeholder="https://www.sitio.com/images/portada.png">
             </div>
             <div class="form-item">
-                <label for="leido">Leido? Si: </label>
+                <label for="esLeido">Leido? Si: </label>
                 <input id="esLeido" type="checkbox" onchange="obtenerValor()">
             </div>
             <div id="send-form" class="form-item">
