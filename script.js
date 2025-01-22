@@ -1,7 +1,6 @@
 const botonSearch = document.getElementById('boton-buscar');
 const contentForm = document.getElementById('content-form');
 const contentArea = document.getElementById('content-area');
-const sendForm = document.getElementById('send-form');
 
 const myLibrary = [];
 
@@ -146,21 +145,27 @@ function obtenerValor() {
     return valorCheckbox;
 }
 
+const formulario = document.getElementById('miFormulario');
+
 function addBookToLibrary(event) {
+    event.preventDefault(); // Previene el envío por defecto del formulario
     eliminarContenidoDelDiv();
-    const formulario = document.getElementById('miFormulario');
+
     const titulo = formulario.elements['title'].value;
     const autor = formulario.elements['autor'].value;
     const paginasString = formulario.elements['paginas'].value;
     const paginas = Number(paginasString);
     const portada = formulario.elements['portada'].value;
     const leido = obtenerValor();
+
     const libro = new Book(autor, titulo, paginas, leido, portada);
     myLibrary.unshift(libro);
     refrescarLibreria();
     botonAgregar();
-    event.preventDefault();
 }
+
+formulario.addEventListener('submit', addBookToLibrary);
+
 
 function eliminarContenidoDelDiv() {
     let divPadre = document.querySelector('.tags-container');
@@ -175,7 +180,6 @@ function refrescarLibreria() {
 
 }
 
-sendForm.addEventListener('click', addBookToLibrary);
 
 function botonAgregar() {
     contentForm.style.transition = 'all 600ms';
